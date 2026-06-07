@@ -73,28 +73,18 @@ Recommended:
 
 ```text
 retro-space-shooter/
+├── retro-space-shooter.sh   # Main launcher
+├── install.sh               # Local installer
+├── install-remote.sh        # curl/bash GitHub installer
 ├── data/
-│   └── highscore.dat
-├── src/
-│   ├── config.sh
-│   ├── input.sh
-│   ├── render.sh
-│   └── explosion.sh
-├── game.sh
-└── README.md
+│   └── highscore.dat        # Local, ignored by git
+└── src/
+    ├── config.sh            # Balance and constants
+    ├── explosion.sh         # Explosion animation frames
+    ├── game.sh              # Main loop, entities, waves, collisions
+    ├── input.sh             # Raw terminal input
+    └── render.sh            # ANSI terminal renderer and HUD
 ```
-
-### Files
-
-| File           | Description                             |
-| -------------- | --------------------------------------- |
-| `game.sh`      | Main game engine and gameplay loop      |
-| `config.sh`    | Game configuration and balancing values |
-| `input.sh`     | Keyboard input and terminal handling    |
-| `render.sh`    | Screen rendering and HUD system         |
-| `explosion.sh` | Explosion sprite animations             |
-
----
 
 ## Controls
 
@@ -113,7 +103,7 @@ retro-space-shooter/
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/retro-space-shooter.git
+git clone https://github.com/Siddharthvrm/retro-space-shooter.git
 cd retro-space-shooter
 ```
 
@@ -128,6 +118,20 @@ Run the game:
 
 ```bash
 ./game.sh
+```
+
+## Install With curl
+
+After the repository is pushed to GitHub, users can install with:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Siddharthvrm/retro-space-shooter/main/install-remote.sh | bash
+```
+
+Then run:
+
+```sh
+retro-space-shooter
 ```
 
 ---
